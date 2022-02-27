@@ -4,9 +4,9 @@
 %% STEP 1: Choose options for MSc / BSc / seminar layout and your bibliographic style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%  Language: 
+%%  Language:
 %%      finnish, swedish, or english
-%%  Pagination (use twoside by default)  
+%%  Pagination (use twoside by default)
 %%      oneside or twoside,
 %%  Study programme / kind of report
 %%      csm  = Master's thesis in Computer Science Master's Programme;
@@ -18,8 +18,8 @@
 %%      algorithms-track-2020 = Algorithms study track
 %%      networking-track-2020 = Networking study track
 
-\documentclass[finnish,twoside,censored,tkt]{HYthesisML} 
-%\documentclass[english,twoside,censored,tkt]{HYthesisML} 
+\documentclass[finnish,twoside,censored,tkt]{HYthesisML}
+%\documentclass[english,twoside,censored,tkt]{HYthesisML}
 
 % If wanted, open new chapters only at right page.
 % By default, "openany".
@@ -33,9 +33,9 @@
 %% natbib -> you can use, e.g., \citep{} or \parencite{} for (Einstein, 1905); with APA \cite -> Einstein, 1905 without ()
 %% maxcitenames=2 -> only 2 author names in text citations, if more -> et al. is used
 %% maxbibnames=99 as no great need to suppress the biliography list in a thesis
-%% for more information see biblatex package documentation, e.g., from https://ctan.org/pkg/biblatex 
+%% for more information see biblatex package documentation, e.g., from https://ctan.org/pkg/biblatex
 
-%% Reference style: select one 
+%% Reference style: select one
 %% for APA = Harvard style = authoryear -> (Einstein, 1905) use:
 \usepackage[style=authoryear,bibstyle=authoryear,backend=biber,natbib=true,maxnames=99,maxcitenames=2,uniquelist=minyear,giveninits=true,uniquename=mininit]{biblatex}
 %% for numeric = Vancouver style -> [1] use:
@@ -43,11 +43,11 @@
 
 
 \addbibresource{bibliography.bib}
-% in case you want the final delimiter between authors & -> (Einstein & Zweistein, 1905) 
+% in case you want the final delimiter between authors & -> (Einstein & Zweistein, 1905)
 % \renewcommand{\finalnamedelim}{ \& }
 % List the authors in the Bibilipgraphy as Lastname F, Familyname G,
 \DeclareNameAlias{sortname}{family-given}
-% remove the punctuation between author names in Bibliography 
+% remove the punctuation between author names in Bibliography
 %\renewcommand{\revsdnamepunct}{ }
 
 
@@ -75,7 +75,7 @@
 % if you want to see which lines are too long or have too little stuff, comment out the following lines
 % \overfullrule=1mm
 % to see more info in the detailed log about under/overfull boxes...
-% \showboxbreadth=50 
+% \showboxbreadth=50
 % \showboxdepth=50
 
 
@@ -85,16 +85,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Set up personal information for the title page and the abstract form.
 %% Replace parameters with your information.
-\title{Title}
+\title{Oppijan kehittymisen tukeminen oppimisanalytiikalla Moodlessa}
 
-\author{Firstname Lastname}
+\author{Tuomas Alanen}
 \date{\today}
 
 % Set supervisors, use the titles according to the thesis language
-% in English Prof. or Dr., or in Finnish toht. or tri or FT, TkT, Ph.D. or in Swedish... 
+% in English Prof. or Dr., or in Finnish toht. or tri or FT, TkT, Ph.D. or in Swedish...
 % Include both advisors and supervisors in the same entry to get them appear on the abstract page.
-% For MSc theses, the terms have somehow changed to supervisors and examiners, denoting BSc level advisors and supervisors. An unfortunate mismatch for now. 
-% Advisors for BSc theses and supervisors for MSc theses are the first contacts, supervisors for BSc theses and examiners for MSc theses are less visible but are responsible on % grading the works. 
+% For MSc theses, the terms have somehow changed to supervisors and examiners, denoting BSc level advisors and supervisors. An unfortunate mismatch for now.
+% Advisors for BSc theses and supervisors for MSc theses are the first contacts, supervisors for BSc theses and examiners for MSc theses are less visible but are responsible on % grading the works.
 
 \supervisors{Prof.~D.U.~Mind, Dr.~O.~Why}
 
@@ -171,20 +171,20 @@
 %% to change the parameters. Removing the abstract and ToC commands will mess up stuff.
 %%
 %% Command \include{file} includes the file of name file.tex.
-%% A new page will be created at every \include command, 
+%% A new page will be created at every \include command,
 %% which makes it appropriate to use it for large entities such as book chapters. Cannot be nested.
-%% It is useful for a big project, as changing one of the include targets 
+%% It is useful for a big project, as changing one of the include targets
 %% won't force the regeneration of the outputs of all the rest.
-%% Alternatively, \input is a more lower level macro 
+%% Alternatively, \input is a more lower level macro
 %% which simply inputs the content of the given file like it was copy&pasted there manually.
 
 %% Change your chapter titles within these files and add the actual text in them.
 
-\include{Ch.10_Introduction}
-\include{Ch.20_Challenges and approaches}
-\include{Ch.30_Buildingblocks for solution}
-\include{Ch.40_Evaluative discussion}
-\include{Ch.50_Conclusions}
+\include{Ch.10_Johdanto}
+\include{Ch.20_Oppimisen analysoinnin tarpeet}
+\include{Ch.30_Datamalli oppijan kehittymisesta}
+\include{Ch.40_Yhteenveto}
+% \include{Ch.50_Conclusions}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\cleardoublepage                          %fixes the position of bibliography in bookmarks
@@ -197,11 +197,11 @@
 \begin{appendices}
 
 %% A sample Appendix
-\include{Ch.90_Appendix_1}
+%% \include{Ch.90_Appendix_1}
 %% another appendix
-\include{instructions/instructions_english}
+%% \include{instructions/instructions_english}
 %% yet another appendix
-\include{instructions/instructions_finnish}
+%% \include{instructions/instructions_finnish}
 
 
 

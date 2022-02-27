@@ -1,4 +1,5 @@
 .DS_Store
+misc
 
 HY-CS-main.aux
 HY-CS-main.bbl
@@ -22,3 +23,5 @@ Ch.50_Conclusions.aux
 Ch.90_Appendix_1.aux
 instructions/instructions_english.aux
 instructions/instructions_finnish.aux
+*.aux
+HY-CS-main.synctex(busy)
