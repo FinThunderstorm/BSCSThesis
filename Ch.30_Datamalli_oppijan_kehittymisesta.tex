@@ -57,7 +57,7 @@ Yksi tapa toteuttaa malli on käyttää ristivalidointia \cite{deisenrothMathema
 Mallin kouluttamisen jälkeen koulutusaineistolla $\mathcal{R}$ tarkastellaan koulutetun mallin $f$ suorituskykyä testausaineiston $\mathcal{V}$ avulla. Tälle halutaan laskea root mean square error RMSE. Näin toteutettaessa saadaan jokaiselle $k$-osalle toteutettua malli $f^{(k)}$ koulutusaineiston $\mathcal{R}^{(k)}$ avulla. Näiden pohjalta voidaan laskea tarkastusaineiston $\mathcal{V}^{(k)}$ avulla empirical risk $R(f^{(k)}, \mathcal{V}^{(k)})$. Tämän avulla ristiinvalidointi pystyy arvioimaan expected generalization error $$\mathds{E}_{\mathcal{V}}[R(f,\mathcal{V})] \approx \frac{1}{K}\Sigma^{K}_{k=1} R(f^{(k)}, \mathcal{V}^{(k)}).$$ Prosessissa käytettävässä arvioinnissa on kaksi lähdettä, joista toinen on ettei rajatulla koulutusaineistolla välttämättä saada parasta mahdollista $f^{(k)}$ ja toinen on, ettei testausaineistolla saada tarkkaa arviota riskistä $R(f^{(k)}, \mathcal{V}^{(k)})$.
 \color{black}
 
-
+Yksi mahdollisuus toteuttaa analytiikkaa oppimisdatalle on käyttää naiivia Bayesin luokitinta, joka pohjautuu Bayesin teoreemaan... täältä kirjasta Data Science Algorithms in a Week : Top 7 Algorithms for Scientific Computing, Data Analysis, and Machine Learning, 2nd Edition kun Windows jumittaa...
 
 
 \color{red}
