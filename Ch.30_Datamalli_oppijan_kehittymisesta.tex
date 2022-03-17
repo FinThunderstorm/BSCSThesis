@@ -1,0 +1,110 @@
+\chapter{Datamalli oppijan kehittymisesta\label{datamallioppijankehittymisesta}}
+\color{red}
+
+
+
+
+% Mattsonin luentoselostuksesta FOR-007, perustuu Agrestin kirjaan kurssimateriaalina
+% - Yleinen lineaarinen malli = normaalilineaarinen malli viitaten normaalijakaumaoletukseen
+% - Yleistetyssä lineaarisessa mallissa voi olla myös muita jakaumia käytetty, kuten Poisson.
+
+
+Ajatus siis, että luodaan malli opiskelijoiden menestymisestä \\
+- > verrataan opiskelijan menestymistä yleiseen malliin \\
+- > katsotaan onko opiskelija mallin mukaisella radalla \\
+- > jos opiskelija tipahtaa, niin mallin avulla havaitaan tämä
+
+\section{Yleistetty malli} % Agrestin kirjasta
+Yleistetyt lineaariset mallit koostuvat kolmesta osasta: satunnaisosasta, systemaattisesta osasta ja linkkifunktiosta \cite{agrestiFoundationsLinearGeneralized2015}.
+
+Matemaattiselta taustaltaan oppimisanalytiikassakin halutaan muodostaa tilastollinen malli, jolla halutaan tutkia tekijöiden $x$ vaikutusta seuraukseen $y$ \cite{mottonenYleistetytLineaarisetMallit2021}. 
+
+% Table 1.1 viitattuna kivasti
+% Yleistettyjä lineaarisia malleja ovat esimerkiksi regressioanalyysi, varianssianalyysi, 
+
+% Lineaariset mallit \& least squares
+
+Selittäviä tekijöitä on kolmenlaisia: sekoittavia tekijöitä, väliintulevia tekijöitä ja riippumattomia syytekijöitä. \cite{mottonenYleistetytLineaarisetMallit2021} (YML-04).
+
+Jos esimerkiksi meillä on lineaarinen malli $$\mu = \beta_0 + \beta_1x_{i1} + \beta_2x_{i2}$$, jossa selittävinä muuttujina kurssiolosuhteista $x_{i1}$ esittää opiskelijan tehtäväpisteitä ja $x_{i2}$ esittää opiskelijan tenttiarvosanaa. Selitettävänä muuttujana $y_i$ on opiskelijan kurssiarvosana. 
+
+Näistä selittävistä muuttujista materiaalin avauskerrat ja käytetty aika ovat sekoittavia tekijöitä. Arvosana tehtävästä puolestaan on väliintuleva muuttuja.
+
+% loput taustotuksesta ja muuttujien sekä osien selityksistä
+
+% lineaarisen mallin sovittaminen
+Multiple linear regressio \cite{agudo-peregrinaCanWePredict2014} \\
+Linear regression \cite{tempelaarSearchMostInformative2015} \\
+Logistic regression \cite{barberCourseCorrectionUsing2012} \\
+Logistic regression \cite{garmanLogisticApproachPredicting2010} \\
+Naïve Bayes algorithm \cite{barberCourseCorrectionUsing2012} \\
+
+
+Linear regressionista hyvää tietoa \cite{rossIntroductoryStatistics2017} - Ch 12 \\
+Naive Bayessian Ch 16
+
+
+Ennen datan syöttämistä millekään analysiontia tai luokittelua tekevälle algoritmille tai mallille, tarvitsee sitä mahdollisesti käsitellä, ns. pre-processing.
+
+\color{black}
+\color{green}
+Oppimisanalytiikassa opiskelijan suoriutumista halutaan luokitella (HOX! Tarkasta ja täydennä muotoilu) \cite{akcapinarUsingLearningAnalytics2019}. Useissa oppimisanalytiikkaa käsitelleissä tutkimuksissa on kokeiltu erilaisia luokittelualgoritmejä data-aineistolle löytääkseen parhaiten toimivan mallin. Kokeiltuja algoritmejä ovat Naive Bayes, Classification Tree, Random Forest, Support Vector Machines, Neural Network, CN2 rules ja k-nearest neighbour. Parhaiten toimivaa mallia voidaan etsiä esimerkiksi suorituskykymittauksin, jossa tarkastellaan Accuracy, Sensitivity, Specificity ja F-Measure. 
+
+Yksi tapa toteuttaa malli on käyttää ristivalidointia \cite{deisenrothMathematicsMachineLearning}. Yksi tälläinen ristivalidoinnin malli on k-fold cross validation. Tässä mallissa aineisto jaetaan $k$ osaan, joista yhtä osaa käytetään testiaineistona $\mathcal{V}$ ja $k-1$ osaa koulutusaineistona $\mathcal{R}$. Tällöin käytettävästä koulutusaineistosta käytetään suurin osa mallin kouluttamiseen, mutta samasta aineistosta saadaan myös tarkastusaineisto. Ristiinvalidoinnissa käydään läpi kaikki mahdolliset $k$ vaihtoehtoa valita testausaineisto eli jaetaan data-aineisto kahteen osaan $D = \mathcal{R} \cup \mathcal{V}$, missä $\mathcal{R} \cap \mathcal{V} = \emptyset$. Näiden k-suorituskerran muodostamien mallien suorituskyky tarkastellaan keskiarvona.
+
+% Lisää tähän kiva taulukkokaaviohimmeli k-fold-cross-validationista, Figure 8.4 %
+
+Mallin kouluttamisen jälkeen koulutusaineistolla $\mathcal{R}$ tarkastellaan koulutetun mallin $f$ suorituskykyä testausaineiston $\mathcal{V}$ avulla. Tälle halutaan laskea root mean square error RMSE. Näin toteutettaessa saadaan jokaiselle $k$-osalle toteutettua malli $f^{(k)}$ koulutusaineiston $\mathcal{R}^{(k)}$ avulla. Näiden pohjalta voidaan laskea tarkastusaineiston $\mathcal{V}^{(k)}$ avulla empirical risk $R(f^{(k)}, \mathcal{V}^{(k)})$. Tämän avulla ristiinvalidointi pystyy arvioimaan expected generalization error $$\mathds{E}_{\mathcal{V}}[R(f,\mathcal{V})] \approx \frac{1}{K}\Sigma^{K}_{k=1} R(f^{(k)}, \mathcal{V}^{(k)}).$$ Prosessissa käytettävässä arvioinnissa on kaksi lähdettä, joista toinen on ettei rajatulla koulutusaineistolla välttämättä saada parasta mahdollista $f^{(k)}$ ja toinen on, ettei testausaineistolla saada tarkkaa arviota riskistä $R(f^{(k)}, \mathcal{V}^{(k)})$.
+\color{black}
+
+
+
+
+\color{red}
+
+Toinen mahdollisuus tehdä tilastollista analyysia kerätylle oppimisdatalle on regressioanalyysi. Regressioanalyysi voidaan tehdä usealla eri tavalla. Tälläisiä tapoja on esimerkiksi yksinkertainen lineaarinen regressio, usean selittäjän lineaarinen regressio ja logistinen regressio. Data-aineiston pohjalta muodostettavalla regressiomallilla voidaan ennustaa esimerkiksi kuinka opiskelija tulee pärjäämään kurssilla.
+
+Lineaarinen regressio kuvaa selittävän muuttujan ja selitettävän muuttujan yhteyttä toisiinsa \cite{rossIntroductoryStatistics2017}. Yksinkertaisessa lineaarisessa regressiosa selittäviä ja selitettäviä muuttujia on molempia yksi. Yksinkertainen lineaarinen regressio voidaan esittää kaavana $$Y = \alpha + \beta x + e,$$ jossa $x$ kuvaa selittävää muuttujaa ja $y$ kuvaa selitettävää muuttujaa. Parametrit $\alpha$ ja $\beta$ kuvaa... Muuttuja $e$ kuvaa satunnaista virhettä \dots, jonka *mean* keskiarvo on nolla. HOX! OLS \& GLS
+
+Parametrien $\alpha$ ja $\beta$ estimointi voidaan tehdä pienimmän neliösumman estimoinnilla (least square estimator).
+
+Esimerkiksi yksinkertaisesta lineaarisesta regressiosta on opiskelijan kolmannen viikon tehtävän tulos vaikuttaa opiskelijan kurssiarvosanaan. (etso parempi)
+
+
+
+Usean selittäjän lineaarinen regressio kuvaa kuinka useampi selittävä muuttuja vaikuttaa selitettävään muuttujaan \cite{rossIntroductoryStatistics2017}. Matemaattisena kaavana esitettynä tämä olisi $$Y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \ldots + \beta_kx_k,$$ jossa $Y$ on selitettävä muuttuja, ja $x_i$ kuvaa selittäviä muuttujia, jossa $i = 1, \cdots, k$. Regressioparametrejä yhtälössä kuvaa $\beta_0, \beta_1, \cdots, \beta_k$ ja satunnaisvirhettä $e$.
+
+HOX! Multikolineaarisuus vaara
+
+Logistinen regressio kuvaa $\cdots$
+
+Dummy-muuttuja
+
+
+
+
+
+
+% Selitettävä muuttuja = opiskelijan menestys kurssilla = response variable
+% Selittävinä muuttujina = opiskelijan toiminta Moodlessa. = input variable
+
+\section{Yksitäiseen oppijaan kohdennetut ehdotukset}
+
+\begin{enumerate}
+    \item arviointi- ja muiden seuraamisperiaatteiden muotoileminen malliksi
+    \item kurssiarvosanan ennustaminen kurssin edistyessä
+    \item suositeltavat jatkokurssit
+    \item Educational Data Mining EMD, ainakin \cite{romeroEducationalDataMining2010}
+    \item etiikka?! \cite{kailaEthicalConsiderationsLearning2019}
+\end{enumerate}
+
+\section{Ehdotuksien tulkinnan rajoitteet}  
+
+\begin{enumerate}
+    \item virhearviot
+    \item yhden asian tajuamatta jääminen !== huono kurssimenestys
+    \item model bias
+\end{enumerate}
+
+
+tilastollinen malli kuvaa optimia, ja verrataan kuinka data sopii tähän malliin
