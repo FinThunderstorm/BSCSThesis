@@ -13,7 +13,7 @@ In the HY-CS-main.tex file you will find the following STEPS 0--5. Below you can
 \begin{itemize}
     \item Obtain a zip file of the LaTeX template from the webpage of your programme.
     \item Go to \url{https://www.overleaf.com/edu/helsinki} and login to Overleaf with your university credentials.
-    \item Go to the list of your projects at \url{https://www.overleaf.com/project}, click ``New Project'' and ``Upload Project''.,  the projects under your account 
+    \item Go to the list of your projects at \url{https://www.overleaf.com/project}, click ``New Project'' and ``Upload Project''.,  the projects under your account
     \item Then upload the zip with the template.
     \item You are now ready to write your thesis in Overleaf by editing the template, you can start by renaming the project.
 \end{itemize}
@@ -41,13 +41,13 @@ In the HY-CS-main.tex file you will find the following STEPS 0--5. Below you can
 {\textbf{STEP 3 -- Write your abstract}}
 
 \begin{itemize}
-\item You can have the abstract in multiple languages with the \texttt{otherlanguages} environment. The example below shows how to provide an English abstract: 
+\item You can have the abstract in multiple languages with the \texttt{otherlanguages} environment. The example below shows how to provide an English abstract:
 
 \begin{verbatim}
-\begin{otherlanguage}{english} 
+\begin{otherlanguage}{english}
 \begin{abstract}
-Your abstract text goes here. 
-\end{abstract} 
+Your abstract text goes here.
+\end{abstract}
 \end{otherlanguage}
 \end{verbatim}
 
@@ -56,7 +56,7 @@ Your abstract text goes here.
 {\textbf{STEP 4 -- Writing your thesis}}
 
 \begin{enumerate}
-\item There are some minimal contents and instructions below 
+\item There are some minimal contents and instructions below
 \item Remove, or comment out, this appendix from your thesis.
 \end{enumerate}
 
@@ -76,7 +76,7 @@ Chapter Bibliography lists all the works that you refer to in your text. You ref
 %This thesis template contains an example of a bibliography.
 
 
-References are done using \texttt{\textbackslash citep\{einstein\}}, which generates in text a citation formatted according to the selected style \citep{einstein}, or \texttt{\textbackslash citep\{latexcompanion,knuth99\}}, which generates \citep{latexcompanion,knuth99}. 
+References are done using \texttt{\textbackslash citep\{einstein\}}, which generates in text a citation formatted according to the selected style \citep{einstein}, or \texttt{\textbackslash citep\{latexcompanion,knuth99\}}, which generates \citep{latexcompanion,knuth99}.
 As examples of a different kinds of citations (see how these look in the Latex source), we can write \citep{einstein} to refer to the work written by \citeauthor{einstein} in \citeyear{einstein}, because the work by \citet{einstein} appears in the bilbliography included in this template.
 
 Note that there are different possible styles for the bibliography and citation keys.
@@ -98,7 +98,7 @@ Consult your supervisors on the chosen style -- and once you arrive at a preferr
     year =         "1905",
     DOI =          "http://dx.doi.org/10.1002/andp.19053221004"
 }
- 
+
 @book{latexcompanion,
     author    = "Michel Goossens and Frank Mittelbach and Alexander Samarin",
     title     = "The \LaTeX\ Companion",
@@ -125,17 +125,17 @@ Consult your supervisors on the chosen style -- and once you arrive at a preferr
 
 The following gives some superficial instructions for using this template for a Master's thesis. For guidelines on thesis writing you can consult various sources, such as university courses on scientific writing or your supervisors.
 
-For more detailed instructions, just google, e.g., "Overleaf table positioning", and your chances of finding good info are pretty good.  
+For more detailed instructions, just google, e.g., "Overleaf table positioning", and your chances of finding good info are pretty good.
 
 
 \section{Figures}
 Besides text, here are simple examples how you can add figures and tables in your thesis.
 Remember always to refer to each figure in the main text and provide them with a descriptive caption.
 
-Figure~\ref{fig:logo} is an example of a figure in the document (see the source about how to add them). 
+Figure~\ref{fig:logo} is an example of a figure in the document (see the source about how to add them).
 %Using figures is particularly useful to display plots of experimental results.
 
-\begin{figure}[ht] 
+\begin{figure}[ht]
 \begin{center}
 \includegraphics[width=0.3\textwidth]{template/figures/HY-logo-ml.png}
 \caption{University of Helsinki flame-logo for Faculty of Science.\label{fig:logo}}
@@ -145,14 +145,14 @@ Figure~\ref{fig:logo} is an example of a figure in the document (see the source 
 \section{Tables}
 
 Table~\ref{table:results} gives an example of a table.
-Remember always to cite the table in the main text, table captions go on top of the table. 
+Remember always to cite the table in the main text, table captions go on top of the table.
 
 \begin{table}[h] % h positions the table here, t! would force on top of the page, or example.
 \begin{center}
 \caption{Experimental results.\label{table:results}} % caption is here to make it on top
-\begin{tabular}{l||l c r} 
-Experiment & 1 & 2 & 3 \\ 
-\hline \hline 
+\begin{tabular}{l||l c r}
+Experiment & 1 & 2 & 3 \\
+\hline \hline
 $A$ & 2.5 & 4.7 & -11 \\
 $B$ & 8.0 & -3.7 & 12.6 \\
 $A+B$ & 10.5 & 1.0 & 1.6 \\

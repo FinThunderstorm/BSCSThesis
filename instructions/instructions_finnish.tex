@@ -42,14 +42,14 @@
 {\textbf{STEP 3 -- Kirjoita tiivistelmä}}
 
 %\begin{itemize}
-%\item 
+%\item
 Voit kirjoittaa tiivistelmän (koko tiivistelmäsivu) eri kielillä \texttt{otherlanguages}-ym\-pä\-ris\-tön avulla. Alla esimerkki jolla kirjoitat englanninkielisen tiivistelmän muulla kuin englannin kielellä kirjoitettuun tutkielmaan:
 
 \begin{verbatim}
-\begin{otherlanguage}{english} 
+\begin{otherlanguage}{english}
 \begin{abstract}
-Your abstract text goes here. 
-\end{abstract} 
+Your abstract text goes here.
+\end{abstract}
 \end{otherlanguage}
 \end{verbatim}
 
@@ -67,7 +67,7 @@ Your abstract text goes here.
 \begin{itemize}
 \item Oletustyylin tekijä-vuosi, eli (Einstein, 1905), voit vaihtaa viittaustyylin (tiedostossa \texttt{HY-CS-main.tex}) helposti (eri mallit kommentoituna) esim. numeroituun [1], tai aakkostyyliin [Ein05].
 Lisää ohjeita liittyen viittaustyylin säätämiseen {Bib}\TeX issä löytyy verkosta: \url{https://ctan.org/pkg/biblatex}
-\item Sovi käytettävä tyyli ohjaajasi kanssa. 
+\item Sovi käytettävä tyyli ohjaajasi kanssa.
 \end{itemize}
 
 \section{Kirjallisuusviitteet Latexissa}
@@ -112,29 +112,29 @@ Kirjallisuuslähteet ylläpidetään erillisessä .bib-tiedostossa. Tässä tutk
     \label{bibexamples-fi}
 \end{figure}
 
-Viitteet kirjallisuuslähteisiin muodostetaan komennolla \texttt{\textbackslash citep\{einstein\}}, josta generoituu tekstiin valitun viittaustyylin mukaisesti muotoiltu viite \citep{einstein}, tai \texttt{\textbackslash citep\{latexcompanion,knuth99\}}, josta tekstiin puolestaan generoituu \citep{latexcompanion,knuth99}. 
+Viitteet kirjallisuuslähteisiin muodostetaan komennolla \texttt{\textbackslash citep\{einstein\}}, josta generoituu tekstiin valitun viittaustyylin mukaisesti muotoiltu viite \citep{einstein}, tai \texttt{\textbackslash citep\{latexcompanion,knuth99\}}, josta tekstiin puolestaan generoituu \citep{latexcompanion,knuth99}.
 Voit esimerkiksi kirjoittaa \citep{einstein} viitataksesi julkaisuun, jonka on kirjoittanut \citeauthor{einstein} vuonna \citeyear{einstein}, kun vain lähde \citet{einstein} on oikein lisättynä kirjallisuuslähdetiedostossa (katso miltä nämä näyttävät Latex lähdekoodissa).
 
-Tekstissä viitatut kirjallisuuslähteet tulevat automaattisesti viiteluetteloon. Kirjallisuuslähteiden tietojen oikeellisuus ja yhdenmukaisuus .bib-tiedostossa vaikuttavat luonnollisesti siihen, miten tiedot tutkielmassa näyttäytyvät. Tämä on syytä huomioida, sillä esim.\ verkosta valmiiksi {Bib\TeX} muodossa löytyvien tietojen täydellisyyten tai samanmuotoisuuteen ei pidä sokeasti luottaa.  
+Tekstissä viitatut kirjallisuuslähteet tulevat automaattisesti viiteluetteloon. Kirjallisuuslähteiden tietojen oikeellisuus ja yhdenmukaisuus .bib-tiedostossa vaikuttavat luonnollisesti siihen, miten tiedot tutkielmassa näyttäytyvät. Tämä on syytä huomioida, sillä esim.\ verkosta valmiiksi {Bib\TeX} muodossa löytyvien tietojen täydellisyyten tai samanmuotoisuuteen ei pidä sokeasti luottaa.
 
 
-Keskustele viittaustyylin valinnasta ohjaajan kanssa. 
-%Joitain vaihtoehtoja on osoitteessa:\\ 
+Keskustele viittaustyylin valinnasta ohjaajan kanssa.
+%Joitain vaihtoehtoja on osoitteessa:\\
 %\url{https://www.overleaf.com/learn/latex/Biblatex_bibliography_styles}.
 %\url{https://www.sharelatex.com/learn/Bibtex_bibliography_styles}.
 
 \section{Joitain ohjeita Latexilla kirjoittamiseen}
 
-Seuraavassa on joitain ohjeita tämän tutkielmapohjan käyttöön maisterintutkielmassa. Kirjoittamisohjeita löytyy useasta eri lähteestä. Voit esimerkiksi tutustua kandidaatintutkielman ohjeisiin. 
+Seuraavassa on joitain ohjeita tämän tutkielmapohjan käyttöön maisterintutkielmassa. Kirjoittamisohjeita löytyy useasta eri lähteestä. Voit esimerkiksi tutustua kandidaatintutkielman ohjeisiin.
 Ohjaajan kanssa on hyvä keskustella aikaisessa vaiheessa työn rakenteesta.
 
 Yksityiskohtaisia ohjeita Latexin käyttämäsestä saa parhaiten hakemalla verkosta, esim. haku englanniksi "Overleaf table positioning" tuottaa oletettavasti aika toimivan vastauksen.
 
 \section{Kuvat}
-Kuva~\ref{fig:logo-fi} toimii esimerkkinä kuvan lisäämisestä työhön (katso tarkemmin mallia Latex lähdekoodista). Muista myös viitata jokaiseen kuvaan tekstissä. 
+Kuva~\ref{fig:logo-fi} toimii esimerkkinä kuvan lisäämisestä työhön (katso tarkemmin mallia Latex lähdekoodista). Muista myös viitata jokaiseen kuvaan tekstissä.
 
 \begin{figure}[ht] % remove [h!] for automatic placement, which is probably better for a thesis with more text on page
-\centering 
+\centering
 \includegraphics[width=0.3\textwidth]{template/figures/HY-logo-ml.png}
 \caption{Helsingin yliopiston logo matemaattis-luonnontieteellisen tiedekunnan värein.\label{fig:logo-fi}}
 \end{figure}
@@ -146,9 +146,9 @@ Taulukossa~\ref{table:results-fi} on esimerkki kokeellisten tulosten raportoinni
 \begin{table}[ht]
 \centering
 \caption{Kokeelliset tulokset.\label{table:results-fi}}
-\begin{tabular}{l||l c r} 
-Koe & 1 & 2 & 3 \\ 
-\hline \hline 
+\begin{tabular}{l||l c r}
+Koe & 1 & 2 & 3 \\
+\hline \hline
 $A$ & 2.5 & 4.7 & -11 \\
 $B$ & 8.0 & -3.7 & 12.6 \\
 $A+B$ & 10.5 & 1.0 & 1.6 \\

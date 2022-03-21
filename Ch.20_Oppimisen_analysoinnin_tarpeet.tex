@@ -1,6 +1,10 @@
+% !TEX root = ./HY-CS-main.tex
+\color{red}
 \chapter{Oppimisen analysoinnin tarpeet\label{oppimisenanalysoinnintarpeet}}
 
 Halutaan tutkia opiskelijan kurssisuorituksien vaikutusta opiskelijan menestykseen kurssilla.
+
+Learning analytics cycle - data -> analyisis -> action \citep{hasanPredictingStudentPerformance2020}
 
 \section{Oppimisanalytiikka pedagogisena työkaluna}
 
@@ -13,7 +17,7 @@ Table 1 \cite{longPenetratingFogAnalytics}
 AnalytiikkaÄly-hanke, tsekkaa tää -> datan käsittelystä tarkasta tukevien lähteiden varalta \cite{kokkonenEffectsDataCleaning}
 E. Kaila (UTU/HY)
 
-Romero ja Siemens toistuvia nimiä 
+Romero ja Siemens toistuvia nimiä
 
 Learning analytics LA <--> Educational Data Mining EDM
 
@@ -25,11 +29,31 @@ Mitä kaikkea saadaan ulos
 
 SQL
 \begin{enumerate}
-    \item raa'alla vuomalla SQL hakuina kannasta => aktiviteettitunnisteet apuna?
+    \item raa'alla voimalla SQL hakuina kannasta => aktiviteettitunnisteet apuna?
+    \item tauluja listattuna \citep{romeroSurveyPreProcessingEducational2014}
 \end{enumerate}
 
 
 Moodlen LA API => onko tästä mihinkään? ainakin pikavilkaisu paikallaan
+
+Ohtuprojektin projektikeskusteluun heittämäni oppimisanalytiikka-aiheiset viestit liittyen opiskelijan toiminnann seuraamiseen aikaleimojen perusteella, teksti mallilla kirjoiteltu mitä tiedetään
+
+Teoriassa opiskelijan käyttämää aikaa oppimisympäristössä voidaan mitata tallentamalla aikaleimoja sivulatauksista, mutta tämä ei ole kovin luotettava menetelmä - perustelen sen sillä, että tällä ei voida mitata ollenkaan mitä käyttäjä tekee - keskittyykö hän tehtävään, vai onko hän hakemassa kahvia.
+
+Teoriassa sen järkevä toteutus vaatisi 3. osapuolen seurantapalikan, kuten kaikkien rakastama (jopa lähes GDPR-compliant...) Google Analytics, jolla saataisiin oikeasti kerättyä relevanttia dataa siitä, miten käyttäjä toimii sivulla. Yksi vaihtoehto olisi pyörittää omaa Matomo-instanssia, mutta tämä vaatii palvelimelle asennettavaksi Moodlesta riippumattoman  sovelluksen, ja tämä olisi aina palvelinkohtainen - jokainen joutuisi siis itse ensin asentamaan Matomon. Sama palvelinriippuvuus tulee Google Analyticsin kanssa, kun siinäkin puhutaan sivustokohtaisesta seurannasta.
+
+Kolmas vaihtoehto on toteuttaa itse analytiikkascripti... tämä olisi tietysti teknisesti mahdollista, mutta kuvaan story-point asteikolla kohdetta eeppiseksi. Lisäksi tämä vaatii tutkimista kuinka me saataisiin edelleenkään trackattua sitä, mikä meitä oikeasti kiinnostaa - mitä käyttäjä tekee, halutaanko mitata hiiren liikettä sivulla, aikaa sivulatauksesta mikrofonin nauhoitusnapin painoon, jotain muuta?
+
+tl;dr; jälkimmäinen voidaan toteuttaa kyllä, mutta tämä tieto ei mielestäni ole sellaista luotettavuudeltaan, minkä avulla voitaisiin tehdä yhtään mitään päätelmiä opiskelijan työskentelystä johtuen teknisistä rajoitteista. Asioita voidaan kyllä mitata ja esittää, mutta itsellä ainoana kysymysmerkkinä on tiedon luotettavuus kuvaamaan mitattua asiaa. Jos toteutetaan sivulatauksien mittaamisen lisäksi JS-script, joka seuraa opiskelijan käyttäytymistä aktiviteetissä, on täten todennäköisyys saada luotettavampaa tietoa mitattua korkeampi.
+
+Kaivelin vähän papereita tähän liittyen ja törmäsin muutamaan:
+
+Google analytics for time behavior measurement in Moodle \citep{filvaGoogleAnalyticsTime2014} // Tässä tehtiin oppimisanalytiikkaa yleisemmin käyttäen Google Analyticsia Moodlen osana. Tässä on yhdistetty myös puhuttu Student Dashboard, ja esimerkkejä myös GA:n avulla mitatusta time spent on page arviosta, joka edustaa  luotettavampaa mittausta kuin pelkkä sivulatauksien välin mittaaminen.
+
+Exploring Student Interactions: Learning Analytics Tools for Student Tracking \citep{condeExploringStudentInteractions2015} // Tässä hyvä esimerkki, että Moodlen oppimisanalytiikkaan on paljon hyviä työkaluja, mutta mikään ei suoranaisesti vastaa meidän tarpeeseen (aktiviteettikohtainen analysointi arvioinnin tueksi), vaan käsittelevät Moodlea LMS/VLE -kokonaisuutena. Nämäkin ovat järkiään kokonaan erillinen palvelu tai Moodleen asennettava lisäpalikka. Samasta hauska huomio, että keskimääräisesti aika moni Moodleen ja oppimisanalytiikkaan liittyvä paperi tulee Espanjasta.
+
+Tiivistetysti näyttäisi siltä, että vaihtoehdot on joko 3. osapuolen GA-tyylinen ratkaisu tai purkkaa oma versio kasaan, joka lienee se järkevin tapa mun osint-tiedustelutiedon perusteella
+
 
 Erilaiset saatavat aineistot
 \begin{enumerate}
@@ -45,15 +69,18 @@ Erilaiset saatavat aineistot
             \item core course module viewed
             \item modassign submission created
             \item modassign submission updated
+            \item koko event api ylipäätään
         \end{itemize}
+    \item events in the report logs -> \cite{agudo-peregrinaCanWePredict2014}
     \item suorituskertojen määrä
     \item pikapalaute (block\_point of view)
     \item muu palaute
+    \item eri muuttujat \citep{mwalumbweUsingLearningAnalytics2017}
 \end{enumerate}
 
 \section{Päättelymahdollisuudet}
 
-Oppimisanalytiikan kolmijako Daniel @ \cite{eoppimiskeskusOppimisanalytiikkaTuleeOletko2017} % sisältää myös hyviä lähteitä 
+Oppimisanalytiikan kolmijako Daniel @ \cite{eoppimiskeskusOppimisanalytiikkaTuleeOletko2017} % sisältää myös hyviä lähteitä
 
 Mitä voidaan päätellä
 \begin{enumerate}
