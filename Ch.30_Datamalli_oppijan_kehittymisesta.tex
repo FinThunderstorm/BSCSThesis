@@ -70,7 +70,7 @@ Bayesin teoreemaa voidaan hyödyntää myös useamman probabilistic eventsin tap
 
 Käytettäessä Bayesilaista todennäköisyyttä, pitää huomioida ovatko vertailtavat tapahtumat riippumattomia toisistaan \citep{natinggaDataScienceAlgorithms2018}. Jos vertaillaan esimerkiksi lämpötilaa ja vuodenaikaa keskenään, niin havaitaan näiden välillä olevan riippuvuus: talvella on kylmää ja kesällä lämmintä. Tämä estää Bayesin teoreeman käyttämisen luokittelemiseen. Tällöin data-aineistoa voidaan kuitenkin hyödyntää tekemällä osittaista analyysiä niille tapahtumille, jotka eivät ole riippuvia toisistaan.
 
-\cite{barberCourseCorrectionUsing2012} omassa tutkimuksessaan yrittäessään tunnistaa opiskelijoita, jotka ovat vaarassa saada hylätyn kurssilta, jolle osallistuu. Toisena mallina tutkimuksessa käytettiin naiivia Bayesia ja kymmenkertaista ristivalidointia. Selittäville muuttujille oli annettu eri painoarvoja riippuen kurssin viikosta. Selittävinä muuttujina oli henkilöön liittyviä taustatietoja, suoritettujen opintopisteiden suhde yritettyihin opintopisteisiin sekä toimintaa verkko-oppimisympäristön keskustelualueella. Verrattuna logistiseen regressioon, lisättyjen selittävien muuttujien kanssa nähtiin kurssin viikolla 0 35 \%-yksikön parannus ennustustarkkuudessa datamäärän ollessa pienempi ja eron kaventuessa huomattavasti lähemmäs toisiaan viikolla 3 datamäärän kasvettua, missä logistisella regressiolla keskimäärin 94\% ennustuksista onnistui ja naiivilla Bayesillä 95\% onnistui.
+\citet{barberCourseCorrectionUsing2012} omassa tutkimuksessaan yrittäessään tunnistaa opiskelijoita, jotka ovat vaarassa saada hylätyn kurssilta, jolle osallistuu. Toisena mallina tutkimuksessa käytettiin naiivia Bayesia ja kymmenkertaista ristivalidointia. Selittäville muuttujille oli annettu eri painoarvoja riippuen kurssin viikosta. Selittävinä muuttujina oli henkilöön liittyviä taustatietoja, suoritettujen opintopisteiden suhde yritettyihin opintopisteisiin sekä toimintaa verkko-oppimisympäristön keskustelualueella. Verrattuna logistiseen regressioon, lisättyjen selittävien muuttujien kanssa nähtiin kurssin viikolla 0 35 \%-yksikön parannus ennustustarkkuudessa datamäärän ollessa pienempi ja eron kaventuessa huomattavasti lähemmäs toisiaan viikolla 3 datamäärän kasvettua, missä logistisella regressiolla keskimäärin 94\% ennustuksista onnistui ja naiivilla Bayesillä 95\% onnistui.
 
 \color{red}
 Useiden eri mallien välisessä vertailussa naiivi Bayes oli ennustustamisen osalta paras algoritmi \citep{kotsiantisPREDICTINGSTUDENTSPERFORMANCE2004}.
@@ -90,7 +90,7 @@ Kuten naiivin Bayesin osalta, täytyy myös regressiossa välttää sellaisia se
 
 Yhdistelläksemme intervallilla liikkuvia muuttujia kategoristen muuttujien kanssa, kuten onko henkilöllä jokin tietty ominaisuus, voidaan käyttää dummy-muuttujia kuvaamaan näitä arvoja \citep{rossIntroductoryStatistics2017}. Tämän avulla pystytään hyödyntämään sellaisia selittäviä muuttujia, jotka eivät ole lähtökohtaisesti numeerisessa muodossa. Jos esimerkiksi usean selittäjän lineaarisessa regressiossa muuttuja $x_3$ kuvaa onko opiskelija tutkinto-opiskelija, voitaisiin tämä esittää numeraalisessa muodossa seuraavasti: $$x_3 = \begin{cases}1 = \text{opiskelija on tutkinto-opiskelija} \\ 0 = \text{opiskelija ei ole tutkinto-opiskelija}\end{cases}.$$
 
-\cite{agudo-peregrinaCanWePredict2014} käytti tutkimuksessaan usean selittäjän lineaarista regressiota etsiessään eri relaatioita opiskelijan toiminnan verkko-oppimisympäristössä ja akateemisen menestyksen väliltä. Riippumattomia selittäviä muuttujia olivat jokainen eri tyyppinen interaktio verkko-oppimisympäristössä ja riippuvana selittävänä muuttujana akateeminen menestys oli esitetty jokaisen opiskelijan saamana kurssin päättöarvosanana. Tutkimuksessa löydettiin merkittäviä relaatioita eri tyyppisten opiskelijan interaktioiden ja akateemisen menestyksen väliltä.
+\citet{agudo-peregrinaCanWePredict2014} käytti tutkimuksessaan usean selittäjän lineaarista regressiota etsiessään eri relaatioita opiskelijan toiminnan verkko-oppimisympäristössä ja akateemisen menestyksen väliltä. Riippumattomia selittäviä muuttujia olivat jokainen eri tyyppinen interaktio verkko-oppimisympäristössä ja riippuvana selittävänä muuttujana akateeminen menestys oli esitetty jokaisen opiskelijan saamana kurssin päättöarvosanana. Tutkimuksessa löydettiin merkittäviä relaatioita eri tyyppisten opiskelijan interaktioiden ja akateemisen menestyksen väliltä.
 
 \color{red}
 \section{Yksitäiseen oppijaan kohdennetut ehdotukset}
@@ -100,12 +100,14 @@ Yhdistelläksemme intervallilla liikkuvia muuttujia kategoristen muuttujien kans
     \item kurssiarvosanan ennustaminen kurssin edistyessä
     \item suositeltavat jatkokurssit
     \item Educational Data Mining EMD, ainakin \citep{romeroEducationalDataMining2010}
-    \item etiikka?! \citep{kailaEthicalConsiderationsLearning2019}
+
 \end{enumerate}
 
 \section{Ehdotuksien tulkinnan rajoitteet}
 
 \begin{enumerate}
+    \item etiikka?! \citep{kailaEthicalConsiderationsLearning2019}
+    \item laki, henkilötieto? \citep{hannulaOppijanDigitaalinenJalanjalki2017}
     \item virhearviot
     \item yhden asian tajuamatta jääminen !== huono kurssimenestys
     \item model bias
