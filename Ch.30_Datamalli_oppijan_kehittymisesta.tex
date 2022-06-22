@@ -2,8 +2,10 @@
 \color{black}
 \chapter{Datamalli oppijan kehittymisestä\label{datamallioppijankehittymisesta}}
 
+\color{blue}
 Oppimisanalytiikassa yhdistelemällä tilastollisia menetelmiä ja ennustavaa mallintamista voidaan kohdentaa ohjausta oppijoiden haasteisiin oppimisessa ja tarjoamalla kohdistettua tukea saatavan datan avulla \citep{ranjeethSurveyPredictiveModels2020}. Käytettävät ennustavat mallit voivat olla mitä vain datanlouhinta-, koneoppimis- ja keinoälymenetelmiä. Datalähteenä malleille voidaan hyödyntää eri oppijasta tietoa sisältäviä järjestelmiä, kuten verkko-oppimisympäristö Moodlea.
 % Huomioi myös Moodle datalähteenä ingressiin.
+\color{black}
 
 \section{Moodle datalähteenä}
 
@@ -17,7 +19,9 @@ Moodlen yhteisö on myös etsinyt erilaisia tapoja kerätä palautetta oppijoilt
 
 Joidenkin tietojen, kuten oppijan tarkemman toiminnan seuraamiseen sivulla tarvitaan kolmannen osapuolen tuottamaa tekniikkaa \citep{filvaGoogleAnalyticsTime2014}. Tälläinen seuraamiseen soveltuva työkalu on esimerkiksi Google Analytics, joka seuraa tarkemmin käyttäjän toimintaa sivustolla. Moodlen lokitiedoista selviää milloin sivu on ladattu, mutta tietoa kuinka kauan oppija sivulla on todellisuudessa viettänyt aikaa ei tällä menetelmällä saada \citep{dougiamasMoodle2022}. On teoreettisesti mahdollista, että oppija on avattuaan sivun katsellut sitä minuutin ajan ja tämän jälkeen lähtenyt kahville. Jos seuraava sivulataus on tunnin päästä, niin tästä ei pystytä luotettavasti laskemaan sivulla vietettyä todellista aikaa.
 
+\color{blue}
 Learning Analytics API tarjoaa Moodlen oman rajapinnan oppimisanalytiikan toteuttamiseen \citep{oliveSupervisedLearningFramework2018}. Moodlessa se jakautuu kahteen osaan, Moodlen Analytics API:n ja Machine Learning backendiin. Analytics API tuottaa mallien tarvitsemaa tietoa koneluettavassa CSV-muodossa. Backend puolestaan vastaa itse tiedon käsittelystä ja analysoinnista.
+\color{black}
 
 \section{Yleistetty malli}
 \color{red}
@@ -52,7 +56,7 @@ Yksinkertainen lineaarinen regressio voidaan laajentaa usean selittäjän lineaa
 Myös regressiossa täytyy selittävien muuttujien olla riippumattomia toisistaan, eli nämä muuttujat eivät saa olla keskenään korreloivia \citep{daoudMulticollinearityRegressionAnalysis2017}. Tätä ilmiötä kutsutaan multikollineaarisuudeksi. Ilmiö voidaan havaita tapauksissa, joissa tapahtuu suurta vaihtelua estimoiduissa kertoimissa lisättäessä tai poistettaessa selittäviä muuttujia tai poistettaessa yksittäisiä datapisteitä.
 
 \section{Datamallin rakentamisessa huomioitavaa}
-
+\color{blue}
 Ennen datan syöttämistä analysointia tai luokittelua tekevälle mallille, tulee aineistolle suorittaa esikäsittely \citep{romeroSurveyPreProcessingEducational2014}. Esikäsittely aloitetaan keräämällä tarvittava data, joka ryhmitellään sopiviin ja järkeviin kokonaisuuksiin. Datan ryhmittelyn jälkeen poistetaan siitä kaikki epäolennainen ja virheellinen sisältö.
 Aineistosta tunnistetaan käyttäjät ja heidän asiointisessiot kohdistaaksemme analyysin oikeisiin oppijoihin.
 Korreloivat ja toisteiset muuttujat jätetään pois, kun valitaan aineistosta sopivat selittävät muuttujat. Isoista data-aineistoista poistetaan aiempien vaiheiden jälkeen turhiksi jääneet kentät, jotka olisivat epäolennaisia prosessille. Lopuksi tarkastellaan mahdollisuutta muodostaa uusia muuttujia olemassa olevien muuttujien perusteella, kuten normalisoida jonkin muuttujan arvot tietylle välille tai muuttaa esitystapaa sopivammaksi.
@@ -96,6 +100,8 @@ Yksi tapa jakaa data-aineisto koulutus- ja testidataan on käyttää ristivalido
 \end{figure}
 
 Koulutusaineistolla $\mathcal{R}$ koulutetun mallin $f$ suorituskykyä tarkastellaan testausaineiston $\mathcal{V}$ avulla, jolle lasketaan keskineliövirheen neliöjuuren avulla empiirinen riski testausaineistolla $\mathcal{V}$ \citep{deisenrothMathematicsMachineLearning2020}. K-kertaisessa ristiinvalidoinnissa lasketaan jokaiselle koulutusaineiston $k$-osan $\mathcal{R}^{(k)}$ predikaattorille $f^{(k)}$ empiirinen riski $R(f^{(k)}, \mathcal{V}^{(k)})$ käyttäen testiaineistoa $\mathcal{V}^{(k)}$. Kaikille mahdollisille $k$-osaan jaoille ristiinvalidointi arvioi odotetun yleistysvirheen kaavasta $$\mathds{E}_{\mathcal{V}}[R(f,\mathcal{V})] \approx \frac{1}{K}\sum^{K}_{k=1} R(f^{(k)}, \mathcal{V}^{(k)}).$$ Käytettävässä arvioinnissa on kaksi lähdettä, joista toisessa rajatulla koulutusaineistolla ei välttämättä saada parasta mahdollista $f^{(k)}$ ja toisessa testausaineistolla ei saada tarkkaa arviota riskistä $R(f^{(k)}, \mathcal{V}^{(k)})$.
+
+\color{black}
 
 \color{red}
 Useiden eri mallien välisessä vertailussa naiivi Bayes oli ennustustamisen osalta paras algoritmi \citep{kotsiantisPREDICTINGSTUDENTSPERFORMANCE2004}.

@@ -1,10 +1,11 @@
 % !TEX root = ./HY-CS-main.tex
 \chapter{Datamallin hyödyntäminen oppimisanalytiikassa\label{hyodyntaminen}}
 
-Oppimisanalytiikkaa voidaan hyödyntää usealla eri tasolla \citep{longPenetratingFogAnalytics2011,siemensLearningAnalyticsEmergence2013}. Kurssitasolla voidaan seurata opiskelijan toimintaa kurssilla ja tehdä havaintoja kurssin edistymisestä sekä sillä menestymisestä. Tätä voidaan tehdä esimerkiksi luokittelulla tai ennustavilla malleilla.
-% Yksi taso on hyödyntää oppimisanalytiikkaa sisällön suosittelemiseen. Tässä oppijan oppimispolku muotoillaan osaamista vastaavaksi esimerkiksi ohjaamalla perusasiat jo hyvin osaava oppija haasteellisemmalle kurssille tai tarjotaan heikommin pärjäävälle opiskelijalle taitotasoa vastaavia tehtäviä. \color{red}(HOX! Tsiikaa noi muut kolme muuta Longin nostoa sekä table 1 + synkronoi seuraaviin kappaleisiin. Muotoile seuraavat kappaleet Longin tasoajattelun kanssa.)\color{black}
-Ennustavien mallien avulla muodostetaan keskimääräistä oppijaa kuvaavia malleja, joiden avulla yksittäisiä oppijoita voidaan vertailla \citep{wolffImprovingRetentionPredicting2013}.
-%Ennustavan mallinnuksen avulla voidaan ennustaa esimerkiksi kuinka oppija tulee menestymään kurssilla ja onko oppija pääsemässä kurssia läpi. Tämä tapahtuu vertailemalla oppijaa muodostettuun malliin ja ennusteen perusteella katsotaan onko oppija vaarassa olla läpäisemättä kurssia.
+Oppimisanalytiikan hyödyntäjiä on useissa käyttäjäryhmissä, kuten oppijat, opettajat, kurssikehittäjät(opintoesimies tms), organisaatiot ja hallintohenkilöstö \citep{romeroEducationalDataMining2010}. Käyttäjäryhmät hyödyntävät
+
+\color{red} Alusta kertomalla oppimisanalytiikan useammasta hyödyntämiskerroksesta, oppija, opettaja, koulu, valtakunnallinen. Oppimisanalytiikan avulla voidaan tehdä opetuksen kehttämistä \citep{romeroEducationalDataMining2010}. Table 1. \color{black}
+
+Ennustavien mallien avulla muodostetaan keskimääräistä oppijaa kuvaavia malleja, joiden avulla yksittäisiä oppijoita voidaan vertailla \citep{wolffImprovingRetentionPredicting2013}. Ennustavan mallinnuksen avulla voidaan ennustaa esimerkiksi kuinka oppija tulee menestymään kurssilla ja onko oppija pääsemässä kurssia läpi. Tämä tapahtuu vertailemalla oppijaa muodostettuun malliin ja ennusteen perusteella katsotaan onko oppija vaarassa olla läpäisemättä kurssia.
 
 \section{Yksitäiseen oppijaan kohdennetut ehdotukset}
 
@@ -15,28 +16,44 @@ Ennustavien mallien avulla muodostetaan keskimääräistä oppijaa kuvaavia mall
 % Naïve Bayes algorithm \citep{barberCourseCorrectionUsing2012} \\
 % Decision tree \citep{wolffImprovingRetentionPredicting2013} \\
 
-Oppijan menestymistä kurssilla voidaan ennustaa eri tarkoituksissa \citep{barberCourseCorrectionUsing2012a}. Tähän voidaan hyödyntää aiempien kurssien menestystietoa muista lähteistä, sekä kurssin edistyessä lisätä kurssisuorituksista saatavaa tietoa mukaan analyysiin. Yhdistämällä tämän visualisointiin, voidaan tarjota oppijalle reaaliaikainen näkymä kurssiarvosanasta ja hyödyntää tätä motivaattorina. Yksi ennustamisen mahdollisuus on tarkastella valmistuuko koulutukseen hakija ennusteen mukaan tavoiteaikataulussa.
-
-Toisaalta voidaan tarkastella onko oppija vaarassa pudota kurssilta \citep{oliveSupervisedLearningFramework2018, suhonenUsingMoodleData2019}. Tarkastellaan oppijan toimintaa verkko-oppimisympäristössä ja yritetään löytää eri merkkejä oppijan putoamisesta kurssilta. Tarkastelua voidaan laajentaa eri kurssien väliseksi \citep{kinnari-korpelaOppimisanalytiikallaTehokkaampaanOhjaukseen2020} ja analytiikan löytäessä putoamisvaarassa olevan oppijan, voidaan hänelle tarjota kohdistetusti tukea oppimiseen jo aikaisessa vaiheessa. Moodleen on sisäänrakennettu Learning Analytics API:n avulla opiskelijoiden tippumisen tunnistamisen tarjoava malli sekä kurssin opetuksen puuttumisen tunnistava malli \citep{oliveSupervisedLearningFramework2018,monllaoAnalyticsAPIMoodleDocs2021}. \color{red} Avaa Moodle osuutta vielä tarkemmin. \color{black}
-% Etsi tämän lähde jostain: Paras tapa tunnistaa oppijan mahdollinen putoaminen on vertailla oppijan aiempaan käyttäytymiseen ja tunnistaa muutoksen merkkejä siinä (tälle oli kiva lähde, löytynee luvusta 3 :D).
+\color{blue}
+Oppijan menestymistä kurssilla voidaan ennustaa eri tarkoituksiin \citep{barberCourseCorrectionUsing2012a}. Tähän voidaan hyödyntää aiempien kurssien menestystietoa muista lähteistä, sekä kurssin edistyessä lisätä kurssisuorituksista saatavaa tietoa mukaan analyysiin. Yhdistämällä tämän visualisointiin, voidaan tarjota oppijalle reaaliaikainen näkymä kurssimenestyksestä ja hyödyntää tätä motivaation lähteenä. Kurssitasolla voidaan seurata opiskelijan toimintaa kurssilla ja tehdä havaintoja kurssin edistymisestä ja menestymisestä \citep{longPenetratingFogAnalytics2011,siemensLearningAnalyticsEmergence2013}. Tätä voidaan tehdä esimerkiksi luokittelulla tai ennustavilla malleilla.
 
 Naiivilla Bayesin luokittimella voidaan esimerkiksi yrittää tunnistaa opiskelijoita, jotka ovat vaarassa saada hylätyn osallistumaltaan kurssilta \citep{barberCourseCorrectionUsing2012}. Selittävinä muuttujina oli henkilöön liittyviä taustatietoja, suoritettujen opintopisteiden suhde yritettyihin opintopisteisiin sekä toimintaa verkko-oppimisympäristön keskustelualueella. Selittäville muuttujille oli annettu eri painoarvoja riippuen kurssin viikosta.
-% Verrattuna logistiseen regressioon, lisättyjen selittävien muuttujien kanssa nähtiin kurssin viikolla 0 35 \%-yksikön parannus ennustustarkkuudessa datamäärän ollessa pienempi ja eron kaventuessa huomattavasti lähemmäs toisiaan viikolla 3 datamäärän kasvettua, missä logistisella regressiolla keskimäärin 94\% ennustuksista onnistui ja naiivilla Bayesillä 95\% onnistui.
 
 Usean selittäjän lineaarista regressiota voidaan hyödyntää esimerkiksi etsittäessä eri relaatioita opiskelijan verkko-oppimisympäristön toiminnan ja akateemisen menestyksen väliltä \citep{agudo-peregrinaCanWePredict2014}. Riippumattomia selittäviä muuttujia olivat eri tyyppiset interaktiot verkko-oppimisympäristössä ja riippuvana selittävänä muuttujana jokaisen oppijan saamana kurssin päättöarvosanana esittety akateeminen menestys, joiden väliltä löydettiin merkittäviä relaatioita.
 
+Yksi oppijan menestymiseen perustuva tarkastelu on onko oppija vaarassa pudota kurssilta \citep{oliveSupervisedLearningFramework2018, suhonenUsingMoodleData2019}. Tarkastellaan oppijan toimintaa verkko-oppimisympäristössä ja yritetään löytää eri merkkejä oppijan putoamisesta kurssilta. Tarkastelua voidaan laajentaa eri kurssien väliseksi \citep{kinnari-korpelaOppimisanalytiikallaTehokkaampaanOhjaukseen2020} ja analytiikan löytäessä putoamisvaarassa olevan oppijan esimerkiksi oppijan jättäessä ilmoittautumatta kursseille ja lopulta hiljaisesti jättämällä opinnot kesken, voidaan hänelle tarjota kohdistetusti tukea oppimiseen jo aikaisessa vaiheessa.
+% Etsi tämän lähde jostain: Paras tapa tunnistaa oppijan mahdollinen putoaminen on vertailla oppijan aiempaan käyttäytymiseen ja tunnistaa muutoksen merkkejä siinä (tälle oli kiva lähde, löytynee luvusta 3 :D).
+
+Moodleen on sisäänrakennettu Learning Analytics API:n avulla opiskelijoiden tippumisen tunnistamisen tarjoava malli \citep{oliveSupervisedLearningFramework2018,monllaoAnalyticsAPIMoodleDocs2021}. \color{red} Avaa Moodle osuutta vielä tarkemmin. \color{black}
+
+Yksi taso on hyödyntää oppimisanalytiikkaa sisällön suosittelemiseen \citep{longPenetratingFogAnalytics2011,siemensLearningAnalyticsEmergence2013}. Tässä oppijan oppimispolku muotoillaan osaamista vastaavaksi esimerkiksi ohjaamalla perusasiat jo hyvin osaava oppija haasteellisemmalle kurssille tai tarjotaan heikommin pärjäävälle opiskelijalle taitotasoa vastaavia tehtäviä. \color{red}(HOX! Tsiikaa noi muut kolme muuta Longin nostoa sekä table 1)\color{black}
+
 Oppimispolku on ohjeistus, joka kertoo oppimistehtävien ohjeistukset ja tavoitteet, sekä havainnollistaa oppimisen edistymistä kurssin aikana \citep{toivolaFlippedLearningKaanteinen2017}. Oppimispolun halutaan mahdollistaa oppijan oman luontaisen oppimistahdin hyödyntäminen. Oppimisanalytiikan avulla voidaan visualisoida oppijan edistyminen oppimispolulla ja tarjota myös suosituksia seuraavista tehtävistä \citep{longPenetratingFogAnalytics2011}. Jos oppija ei ole vielä ymmärtänyt jotain oppimispolun osa-aluetta, voi analytiikka ehdottaa lisätehtävää osaamisen vahvistamiseksi ennen seuraavaan osa-alueeseen siirtymistä. Pikapalautetta voidaan hyödyntää itsearvioiden toteuttamiseen ja edelleen analytiikan tukena.
 
-Tätä voitaisiin myös hyödyntää kurssipolkujen suunnittelussa ehdottamalla esimerkiksi oppijalle seuraavia kursseja aiempien kurssien menestyksen pohjalta \citep{longPenetratingFogAnalytics2011}. Jos oppija ei ole esimerkiksi pärjännyt matriisilaskennan ensimmäisellä kurssilla, niin oppimisanalytiikka voisi ehdottaa matriisilaskennan ensimmäisen kurssin asioita kertaavaa kurssia ennen siirtymistä toiselle kurssille.
 
 \section{Opetuksen kehittämiseen kohdennetut ehdotukset}
 
-Oppimisanalytiikan avulla voidaan tehdä opetuksen kehttämistä \citep{romeroEducationalDataMining2010}. Oppimisanalytiikasta saatavalla datalla voidaan suunnitella kurssien resursointia, kehittää opetussuunnitelmia sekä tukea hallinnon päätöksiä. Oppimisanalytiikalla voidaan löytää nykyisistä kursseista heikkoja kohtia, joihin ratkaisu voi olla esimerkiksi uuden kurssin luominen tai nykyisen kehittäminen tukemaan osaamisvajeen paikkaamista. Tämä voi näkyä esimerkiksi oppimateriaalin kehittämisenä, mikäli analytiikka osoittaa tietyn osa-alueen tehtävien menevän muita heikommin, kun saman aikaisesti tiettyä opetusmateriaalin osaa tarkastellaan muita enemmän.
+\color{blue}
+Oppimisanalytiikasta saatavalla datalla voidaan kehittää resurssien sijoittelua ja käyttöä \citep{longPenetratingFogAnalytics2011}. Oppimisanalytiikalla voidaan löytää nykyisistä kursseista heikkoja kohtia, joihin ratkaisu voi olla esimerkiksi uuden kurssin luominen tai nykyisen kehittäminen tukemaan osaamisvajeen paikkaamista. Tämä voi näkyä esimerkiksi oppimateriaalin kehittämisenä, mikäli analytiikka osoittaa tietyn osa-alueen tehtävien menevän muita heikommin, kun saman aikaisesti tiettyä opetusmateriaalin osaa tarkastellaan muita enemmän.
 
-\color{red} Moodlen ei opetusta kurssilla malli tähän. Lihavoita lukua. \color{black}
+Oppimisanalytiikan avulla voidaan ymmärtää paremmin oppilaitoksen onnistumisia ja haasteita \citep{longPenetratingFogAnalytics2011}. Oppilaitoksen tuottavuutta ja tehokkuutta voidaan kehittää hyödyntämällä viimeisintä tietoa ja haasteisiin pystytään vastamaan nopeasti.
+
+Oppimisanalytiikan avulla voidaan kehittää opetussuunnitelmia sekä tukea hallinnon päätöksiä \citep{romeroEducationalDataMining2010,longPenetratingFogAnalytics2011}
+
+Moodleen on sisäänrakennettu Learning Analytics API:n avulla kurssin opetuksen puuttumisen tunnistava malli \citep{monllaoAnalyticsAPIMoodleDocs2021}. \color{red} Avaa Moodle osuutta vielä tarkemmin. \color{black}
+
+Yksi ennustamisen mahdollisuus on tarkastella valmistuuko koulutukseen hakija ennusteen mukaan tavoiteaikataulussa \citep{barberCourseCorrectionUsing2012a}.
+
+Opetuksen tutkijat \citep{romeroEducationalDataMining2010}
+
+\color{black}
 
 \color{red}
 \section{Ehdotuksien tulkinnan rajoitteet}
+
+Suunniteltaessa oppimisanalytiikan hyödyntämistä täytyy huomioida eettiset näkökulmat. Eettiseltä näkökulmalta huomioitavaa on esimerkiksi datan omistajuus sekä yksityisyydensuoja \citep{sladeLearningAnalyticsEthical2013}. Lisäksi kontekstin tarkasteleminen on tärkeää, sillä eettiset haasteet ovat erilaiset esimerkiksi resurssien optimoimisen ja oppijan suoriutumisen arvioinnin välillä. Jokaisella käyttökohteella on omat erityispiirteet ja -ohjeet, jotka tulevat huomioida.
 
 \begin{enumerate}
     \item etiikka?! \citep{kailaEthicalConsiderationsLearning2019}
