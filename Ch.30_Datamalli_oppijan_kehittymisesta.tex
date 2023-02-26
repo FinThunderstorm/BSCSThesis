@@ -2,10 +2,7 @@
 \color{black}
 \chapter{Datamalli oppijan kehittymisestä\label{datamallioppijankehittymisesta}}
 
-\color{blue}
-Oppimisanalytiikassa yhdistelemällä tilastollisia menetelmiä ja ennustavaa mallintamista voidaan kohdentaa ohjausta oppijoiden haasteisiin oppimisessa ja tarjoamalla kohdistettua tukea saatavan datan avulla \citep{ranjeethSurveyPredictiveModels2020}. Käytettävät ennustavat mallit voivat olla mitä vain datanlouhinta-, koneoppimis- ja keinoälymenetelmiä. Datalähteenä malleille voidaan hyödyntää eri oppijasta tietoa sisältäviä järjestelmiä, kuten verkko-oppimisympäristö Moodlea.
-% Huomioi myös Moodle datalähteenä ingressiin.
-\color{black}
+Oppimisanalytiikassa yhdistelemällä tilastollisia menetelmiä ja ennustavaa mallintamista voidaan kohdentaa ohjausta oppijoiden haasteisiin oppimisessa ja tarjoamalla kohdistettua tukea saatavan datan avulla \citep{ranjeethSurveyPredictiveModels2020}. Käytettävät ennustavat mallit voivat olla mitä vain datanlouhinta-, koneoppimis- ja keinoälymenetelmiä. Datalähteenä malleille voidaan hyödyntää eri oppijasta tietoa sisältäviä järjestelmiä, kuten verkko-oppimisympäristö Moodlea. Moodle tarjoaa esimerkiksi aktiviteeteistä laajasti erilaista tietoa hyödynnettäväksi mallin muodostamiseen.
 
 \section{Moodle datalähteenä}
 
@@ -20,7 +17,7 @@ Moodlen yhteisö on myös etsinyt erilaisia tapoja kerätä palautetta oppijoilt
 Joidenkin tietojen, kuten oppijan tarkemman toiminnan seuraamiseen sivulla tarvitaan kolmannen osapuolen tuottamaa tekniikkaa \citep{filvaGoogleAnalyticsTime2014}. Tälläinen seuraamiseen soveltuva työkalu on esimerkiksi Google Analytics, joka seuraa tarkemmin käyttäjän toimintaa sivustolla. Moodlen lokitiedoista selviää milloin sivu on ladattu, mutta tietoa kuinka kauan oppija sivulla on todellisuudessa viettänyt aikaa ei tällä menetelmällä saada \citep{dougiamasMoodle2022}. On teoreettisesti mahdollista, että oppija on avattuaan sivun katsellut sitä minuutin ajan ja tämän jälkeen lähtenyt kahville. Jos seuraava sivulataus on tunnin päästä, niin tästä ei pystytä luotettavasti laskemaan sivulla vietettyä todellista aikaa.
 
 \color{blue}
-Learning Analytics API tarjoaa Moodlen oman rajapinnan oppimisanalytiikan toteuttamiseen \citep{oliveSupervisedLearningFramework2018}. Moodlessa se jakautuu kahteen osaan, Moodlen Analytics API:n ja Machine Learning backendiin. Analytics API tuottaa mallien tarvitsemaa tietoa koneluettavassa CSV-muodossa. Backend puolestaan vastaa itse tiedon käsittelystä ja analysoinnista.
+Learning Analytics API tarjoaa Moodlen oman rajapinnan oppimisanalytiikan toteuttamiseen \citep{oliveSupervisedLearningFramework2018}. Moodlessa se jakautuu kahteen osaan, Moodlen Analytics API:n ja Machine Learning backendiin. Analytics API tuottaa mallien tarvitsemaa tietoa koneluettavassa CSV-muodossa. Backend puolestaan vastaa itse tiedon käsittelystä ja analysoinnista. Tämä mahdollistaa oppimisanalytiikkamallien integroimisen osaksi Moodlea helposti.
 \color{black}
 
 \section{Yleistetty malli}
@@ -103,6 +100,6 @@ Koulutusaineistolla $\mathcal{R}$ koulutetun mallin $f$ suorituskykyä tarkastel
 
 \color{black}
 
-\color{red}
-Useiden eri mallien välisessä vertailussa naiivi Bayes oli ennustustamisen osalta paras algoritmi \citep{kotsiantisPREDICTINGSTUDENTSPERFORMANCE2004}.
-\color{black}
+% \color{red}
+% Useiden eri mallien välisessä vertailussa naiivi Bayes oli ennustustamisen osalta paras algoritmi \citep{kotsiantisPREDICTINGSTUDENTSPERFORMANCE2004}.
+% \color{black}
