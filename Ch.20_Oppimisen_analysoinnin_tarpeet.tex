@@ -21,16 +21,16 @@ Oppimisanalytiikkaa voidaan kuvata syklinä, jossa on neljä osa-aluetta: oppija
         \filldraw[color=black, fill=black!5, very thick] (2.75,0) circle (5pt);
         \filldraw[color=black, fill=black!5, very thick] (4.25,0) circle (1pt);
 
-        \node[] at (0,1.75) {oppija};
+        \node[] at (0,2.5) {oppija};
         \node[] at (3.5,0) {data};
-        \node[] at (0,-1.75) {analyysi};
+        \node[] at (0,-2.5) {analyysi};
         \node[] at (-3.5,0) {toiminta};
 
 
-        \draw[thick, ->] (1,1.25) -- (2.5,0.5);
-        \draw[thick, ->] (3.5,0) -- (0,-1.75);
-        \draw[thick, ->] (0,-1.75) -- (-3.5,0);
-        \draw[thick, ->] (-3.5,0) -- (0,1.75);
+        \draw[thick, ->] (1,2.25) -- (2.5,1.0);
+        \draw[thick, ->] (2.5,-1.0) -- (1,-2.25);
+        \draw[thick, ->] (-1,-2.25) -- (-2.25,-1);
+        \draw[thick, ->] (-2.25,1) -- (-1,2.25);
     \end{tikzpicture}
     \caption{Oppimisanalytiikan eri vaiheet tiivistetysti \citep{clowLearningAnalyticsCycle2012}.}
 \end{figure}

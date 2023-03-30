@@ -14,10 +14,11 @@ Oppijan menestymistä kurssilla voidaan ennustaa eri tarkoituksiin \citep{barber
 
 Naiivilla Bayesin luokittimella voidaan esimerkiksi yrittää tunnistaa opiskelijoita, jotka ovat vaarassa saada hylätyn osallistumaltaan kurssilta \citep{barberCourseCorrectionUsing2012}. Selittävinä muuttujina oli henkilöön liittyviä taustatietoja, suoritettujen opintopisteiden suhde yritettyihin opintopisteisiin sekä toimintaa verkko-oppimisympäristön keskustelualueella. Selittäville muuttujille oli annettu eri painoarvoja riippuen kurssin viikosta.
 
-Usean selittäjän lineaarista regressiota voidaan hyödyntää esimerkiksi etsittäessä eri relaatioita opiskelijan verkko-oppimisympäristön toiminnan ja akateemisen menestyksen väliltä \citep{agudo-peregrinaCanWePredict2014}. Riippumattomia selittäviä muuttujia olivat eri tyyppiset interaktiot verkko-oppimisympäristössä ja riippuvana selittävänä muuttujana jokaisen oppijan saamana kurssin päättöarvosanana esittety akateeminen menestys, joiden väliltä löydettiin merkittäviä relaatioita.
-
 Yksi oppijan menestymiseen perustuva tarkastelu on onko oppija vaarassa pudota kurssilta \citep{oliveSupervisedLearningFramework2018, suhonenUsingMoodleData2019}. Tarkastellaan oppijan toimintaa verkko-oppimisympäristössä ja yritetään löytää eri merkkejä oppijan putoamisesta kurssilta. Tarkastelua voidaan laajentaa eri kurssien väliseksi \citep{kinnari-korpelaOppimisanalytiikallaTehokkaampaanOhjaukseen2020} ja analytiikan löytäessä putoamisvaarassa olevan oppijan esimerkiksi oppijan jättäessä ilmoittautumatta kursseille ja lopulta hiljaisesti jättämällä opinnot kesken, voidaan hänelle tarjota kohdistetusti tukea oppimiseen jo aikaisessa vaiheessa.
 % Etsi tämän lähde jostain: Paras tapa tunnistaa oppijan mahdollinen putoaminen on vertailla oppijan aiempaan käyttäytymiseen ja tunnistaa muutoksen merkkejä siinä (tälle oli kiva lähde, löytynee luvusta 3 :D).
+
+Usean selittäjän lineaarista regressiota voidaan hyödyntää esimerkiksi etsittäessä eri relaatioita oppijoiden verkko-oppimisympäristön toiminnan ja akateemisen menestyksen väliltä \citep{agudo-peregrinaCanWePredict2014}. Riippumattomia selittäviä muuttujia olivat eri tyyppiset interaktiot verkko-oppimisympäristössä ja riippuvana selittävänä muuttujana jokaisen oppijan saamana kurssin päättöarvosanana esittety akateeminen menestys, joiden väliltä löydettiin merkittäviä relaatioita.
+
 
 Moodleen on sisäänrakennettu Learning Analytics API:n avulla opiskelijoiden tippumisen tunnistamisen tarjoava malli \citep{oliveSupervisedLearningFramework2018,monllaoAnalyticsAPIMoodleDocs2021}. \color{red} Avaa Moodle osuutta vielä tarkemmin. \color{black}
 
@@ -40,13 +41,3 @@ Moodleen on sisäänrakennettu Learning Analytics API:n avulla kurssin opetuksen
 Yksi ennustamisen mahdollisuus on tarkastella valmistuuko koulutukseen hakija ennusteen mukaan tavoiteaikataulussa \citep{barberCourseCorrectionUsing2012a}.
 
 Opetuksen tutkijat \citep{romeroEducationalDataMining2010}
-
-\color{black}
-
-\color{red}
-\section{Ehdotuksien tulkinnan rajoitteet}
-
-\begin{enumerate}
-    \item virhearviot ja model bias
-    \item mallien ennustuksien paikkaapitävyyden todennäköisyydet - kuinka todennäköisesti ennustuksen tulos pitää paikkansa. voidaanko 72 prosentin todennäköisyyttä pitää sellaisena, että se toimii luotettavana ohjauksen työkaluna?
-\end{enumerate}
